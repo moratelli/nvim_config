@@ -27,7 +27,22 @@ return {
   { import = "astrocommunity.debugging.nvim-dap-repl-highlights" },
   { import = "astrocommunity.debugging.nvim-dap-virtual-text" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
-  { import = "astrocommunity.motion.leap-nvim" },
+  { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.utility.mason-tool-installer-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.lsp.delimited-nvim" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.test.neotest" },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/neotest-jest", -- add dependency to neotest
+    },
+    opts = function(_, opts)
+      if not opts.adapters then opts.adapters = {} end
+      table.insert(opts.adapters, require "neotest-jest") -- insert neotest-jest to adapters list
+    end,
+  },
 }
