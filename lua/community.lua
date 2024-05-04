@@ -34,7 +34,10 @@ return {
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.editing-support.ultimate-autopair-nvim" },
+  { import = "astrocommunity.split-and-window.windows-nvim" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.code-runner.overseer-nvim" },
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -44,5 +47,25 @@ return {
       if not opts.adapters then opts.adapters = {} end
       table.insert(opts.adapters, require "neotest-jest") -- insert neotest-jest to adapters list
     end,
+  },
+  {
+    "coffebar/neovim-project",
+    opts = {
+      projects = { -- define project roots
+        "~/dev/*",
+        "~/.config/*",
+      },
+    },
+    init = function()
+      -- enable saving the state of plugins in the session
+      vim.opt.sessionoptions:append "globals" -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
+    end,
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+      { "Shatur/neovim-session-manager" },
+    },
+    lazy = false,
+    priority = 100,
   },
 }

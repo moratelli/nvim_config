@@ -15,5 +15,9 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+if vim.g.neovide then
+  vim.o.guifont = "JetBrainsMono Nerd Font:h12:#e-subpixelantialias" -- Put anything you want to happen only in Neovide here
+end
+
 require "lazy_setup"
 require "polish"
