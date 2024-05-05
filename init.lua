@@ -16,7 +16,8 @@ if not pcall(require, "lazy") then
 end
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h12:#e-subpixelantialias" -- Put anything you want to happen only in Neovide here
+  vim.o.guifont = "JetBrainsMono Nerd Font:h12.3:#h-slight" -- Put anything you want to happen only in Neovide here
+  vim.opt.linespace = 2
   vim.g.neovide_floating_blur = false
 end
 

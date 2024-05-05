@@ -38,6 +38,8 @@ return {
   { import = "astrocommunity.split-and-window.windows-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.code-runner.overseer-nvim" },
+  { import = "astrocommunity.motion.tabout-nvim" },
+  { import = "astrocommunity.editing-support.vim-visual-multi" },
   {
     "nvim-neotest/neotest",
     dependencies = {
